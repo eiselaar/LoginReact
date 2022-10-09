@@ -13,7 +13,7 @@ import {
     NativeBaseProvider,
 } from "native-base";
 
-const Login = () => {
+export const Login = ({navigation}) => {
      
     return (
         <Center w="100%">
@@ -45,7 +45,9 @@ const Login = () => {
               Forget Password?
             </Link>
           </FormControl>
-          <Button mt="2" colorScheme="red">
+          <Button mt="2" colorScheme="red" onPress={() =>{
+            navigation.navigate("Image_Picker");
+          } }>
             Sign in
           </Button>
           <HStack mt="6" justifyContent="center">
@@ -58,7 +60,10 @@ const Login = () => {
             color: "red.500",
             fontWeight: "medium",
             fontSize: "sm"
-          }} href="#">
+          }} onPress={() =>{
+            navigation.navigate("SingUp");
+          } }>
+            
               Sign Up
             </Link>
           </HStack>
